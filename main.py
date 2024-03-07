@@ -1,13 +1,21 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+# from src.task import router as task_router
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+description = """
+Memento API
+"""
 
+app = FastAPI(
+    title="Memento",
+    description=description,
+    version="0.0.1",
+    contact={
+        "name": "Muntasir Mahmud",
+        "url": "http://x-force.example.com/contact/",
+    },
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+)
+
+# app.include_router(task_router.router)
