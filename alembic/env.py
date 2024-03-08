@@ -35,8 +35,7 @@ def get_url():
     db_password = config_env.DATABASE_PASSWORD
     db_host = config_env.DATABASE_HOST
     db_name = config_env.DATABASE_NAME
-    return f"postgresql+psycopg2://{db_user}:{db_password}@\
-            {db_host}:5432/{db_name}"
+    return f"postgresql+psycopg2://{db_user}:{db_password}@{db_host}:5432/{db_name}"
 
 
 def run_migrations_offline() -> None:

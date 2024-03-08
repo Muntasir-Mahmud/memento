@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c47c3ada-b7b7-47b3-b0d6-0a3177be3938" name="Changes" comment="Bug-fix: first migration from alembic">
+    <list default="true" id="c47c3ada-b7b7-47b3-b0d6-0a3177be3938" name="Changes" comment="Bug-fix: changed some linting">
+      <change afterPath="$PROJECT_DIR$/src/topics/crud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/topics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/topics/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/topics/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/topics/services.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,24 +60,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "FastAPI.memento.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="memento" type="Python.FastAPI">
       <option name="file" value="$PROJECT_DIR$/main.py" />
@@ -109,6 +115,8 @@
       <workItem from="1709907506562" duration="1964000" />
       <workItem from="1709912069596" duration="2660000" />
       <workItem from="1709915196501" duration="2973000" />
+      <workItem from="1709920898054" duration="3189000" />
+      <workItem from="1709925938256" duration="4718000" />
     </task>
     <task id="LOCAL-00001" summary="Created the project">
       <option name="closed" value="true" />
@@ -150,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709916899751</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Bug-fix: changed some linting">
+      <option name="closed" value="true" />
+      <created>1709920964700</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709920964700</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +178,10 @@
     <MESSAGE value="Set up the project, alembic" />
     <MESSAGE value="Feature: added models, router, schema, services for Topic" />
     <MESSAGE value="Bug-fix: first migration from alembic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug-fix: first migration from alembic" />
+    <MESSAGE value="Bug-fix: changed some linting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug-fix: changed some linting" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/memento$memento.coverage" NAME="memento Coverage Results" MODIFIED="1709930396433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

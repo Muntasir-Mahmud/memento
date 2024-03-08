@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-# from src.task import router as task_router
+from src.topics import router as topic_router
 
 
 description = """
@@ -18,4 +18,4 @@ app = FastAPI(
 
 )
 
-# app.include_router(task_router.router)
+app.include_router(topic_router.router)
