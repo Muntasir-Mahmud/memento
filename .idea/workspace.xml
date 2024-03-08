@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c47c3ada-b7b7-47b3-b0d6-0a3177be3938" name="Changes" comment="Set up the project, alembic">
+    <list default="true" id="c47c3ada-b7b7-47b3-b0d6-0a3177be3938" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/topics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/topics/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/topics/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/topics/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/topics/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/services.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +68,11 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RunManager">
@@ -100,7 +108,9 @@
       <option name="presentableId" value="Default" />
       <updated>1709828101405</updated>
       <workItem from="1709828112985" duration="8579000" />
-      <workItem from="1709907506562" duration="1404000" />
+      <workItem from="1709907506562" duration="1964000" />
+      <workItem from="1709912069596" duration="2660000" />
+      <workItem from="1709915196501" duration="1632000" />
     </task>
     <task id="LOCAL-00001" summary="Created the project">
       <option name="closed" value="true" />
@@ -126,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709839487263</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Feature: added models, router, schema, services for Topic">
+      <option name="closed" value="true" />
+      <created>1709909364566</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709909364566</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +154,7 @@
     <MESSAGE value="Created the project" />
     <MESSAGE value="added .idea to gitignore" />
     <MESSAGE value="Set up the project, alembic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up the project, alembic" />
+    <MESSAGE value="Feature: added models, router, schema, services for Topic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature: added models, router, schema, services for Topic" />
   </component>
 </project>

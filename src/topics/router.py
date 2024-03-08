@@ -12,5 +12,5 @@ router = APIRouter(tags=['Topics'], prefix='/topics')
 
 
 @router.get('/', response_model=List[schema.TopicList])
-async def get_all_products(database: Session = Depends(db.get_db)):
-    return await services.get_all_tasks(database)
+async def get_all_topics(database: Session = Depends(db.get_db)):
+    return await services.get_all_topics(database)

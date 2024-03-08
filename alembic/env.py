@@ -1,14 +1,11 @@
 from logging.config import fileConfig
 
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
-
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
 from src import config as config_env
 from src.db import Base  # noqa
-
+from src.topics.models import Topic  # noqa
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -38,7 +35,7 @@ def get_url():
     db_password = config_env.DATABASE_PASSWORD
     db_host = config_env.DATABASE_HOST
     db_name = config_env.DATABASE_NAME
-    return f"postgresql://{db_user}:{db_password}@{db_host}/{db_name}"
+    return f"postgresql+psycopg2://{db_user}:{db_password}@{db_host}:5432/{db_name}"
 
 
 def run_migrations_offline() -> None:
@@ -72,15 +69,16 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
+    configuration = config.get_section(config.config_ini_section)
+    configuration["sqlalchemy.url"] = get_url()
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
-        prefix="sqlalchemy.",
-        poolclass=pool.NullPool,
+        configuration, prefix="sqlalchemy.", poolclass=pool.NullPool,
     )
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, target_metadata=target_metadata
+            connection=connection, target_metadata=target_metadata,
+            compare_type=True
         )
 
         with context.begin_transaction():
