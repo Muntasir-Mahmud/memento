@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c47c3ada-b7b7-47b3-b0d6-0a3177be3938" name="Changes" comment="">
+    <list default="true" id="c47c3ada-b7b7-47b3-b0d6-0a3177be3938" name="Changes" comment="Bug-fix: first migration from alembic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/topics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/topics/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/topics/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/topics/services.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +42,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -110,7 +108,7 @@
       <workItem from="1709828112985" duration="8579000" />
       <workItem from="1709907506562" duration="1964000" />
       <workItem from="1709912069596" duration="2660000" />
-      <workItem from="1709915196501" duration="1632000" />
+      <workItem from="1709915196501" duration="2973000" />
     </task>
     <task id="LOCAL-00001" summary="Created the project">
       <option name="closed" value="true" />
@@ -144,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709909364566</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Bug-fix: first migration from alembic">
+      <option name="closed" value="true" />
+      <created>1709916899751</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709916899751</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +161,7 @@
     <MESSAGE value="added .idea to gitignore" />
     <MESSAGE value="Set up the project, alembic" />
     <MESSAGE value="Feature: added models, router, schema, services for Topic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature: added models, router, schema, services for Topic" />
+    <MESSAGE value="Bug-fix: first migration from alembic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug-fix: first migration from alembic" />
   </component>
 </project>
