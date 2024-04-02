@@ -25,18 +25,11 @@ class Environment(StrEnum):
     prod = "prod"
 
 
-class Paths:
-    # memento
+class Settings(BaseSettings):
     ROOT_DIR: Path = Path(__file__).parent.parent.parent
     BASE_DIR: Path = ROOT_DIR / "app"
     EMAIL_TEMPLATES_DIR: Path = BASE_DIR / "emails"
     LOGIN_PATH: str = "/auth/login"
-
-
-class Settings(BaseSettings):
-    @property
-    def PATHS(self) -> Paths:
-        return Paths()
 
     ENVIRONMENT: Environment = "dev"
     SECRET_KEY: str

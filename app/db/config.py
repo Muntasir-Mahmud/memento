@@ -3,6 +3,7 @@ from tortoise.contrib.fastapi import register_tortoise
 
 from app.core.config import settings
 
+# TODO: take the credentials from settings
 TORTOISE_ORM = {
     "connections": {
         'default': {
@@ -18,7 +19,8 @@ TORTOISE_ORM = {
     },
     "apps": {
         "models": {
-            "models": ["aerich.models", "app.users.models"],
+            "models": ["aerich.models",
+                       "app.users.models"],
             "default_connection": "default",
         },
     },

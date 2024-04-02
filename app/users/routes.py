@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, status
 
 from app.core.auth import current_user, fastapi_users
 from app.core.pagination import Page, Params, paginate
@@ -10,6 +10,7 @@ router = APIRouter(prefix="/users", tags=["users"])
 
 
 @router.get("/",
+            status_code=status.HTTP_200_OK,
             response_model=Page[UserRead],
             dependencies=[Depends(current_user)])
 async def user_list(params: Params = Depends()):
