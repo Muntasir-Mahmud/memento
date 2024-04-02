@@ -141,7 +141,6 @@ def create_user(
 def start_app(app_name: str):
     """Create a new fastapi component, similar to django startapp"""
     package_name = app_name.lower().strip().replace(" ", "_").replace("-", "_")
-    print(settings.BASE_DIR)
     app_dir = settings.BASE_DIR / package_name
     files = {
         "__init__.py": "",
