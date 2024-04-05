@@ -10,6 +10,7 @@ from .core.config import Environment, settings
 from .db.config import register_db
 from .lifetime import startup
 from .users.routes import router as users_router
+from .topics.routes import router as topics_router
 
 
 # noinspection PyTypeChecker
@@ -21,9 +22,11 @@ def get_application() -> FastAPI:
     )
     _app.include_router(get_auth_router())
     _app.include_router(users_router)
+    _app.include_router(topics_router)
     _app.add_middleware(
         CORSMiddleware,
-        allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+        allow_origins=[str(origin) for origin in
+                       settings.BACKEND_CORS_ORIGINS],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],

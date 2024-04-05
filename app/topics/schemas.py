@@ -24,4 +24,3 @@ class TopicUpdate(TopicBase):
 
 class TopicRead(TopicInDBBase):
     pass
-

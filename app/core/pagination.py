@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Generic, TypeVar
+from typing import Generic, TypeVar, List, Type
 
 from pydantic import BaseModel, Field
 from tortoise.queryset import QuerySet
@@ -16,14 +16,15 @@ class Params(BaseModel):
 
 
 class Page(BaseModel, Generic[T]):
-    items: list[T]
+    items: List[T]
     total: int
 
 
-async def paginate(items: QuerySet, params: Params) -> dict:
+async def paginate(items: QuerySet, params: Params, pydantic_model: Type[BaseModel]) -> Page:
     offset = params.offset
     limit = params.limit
-    return {
-        "items": await items.limit(limit).offset(offset).order_by("-created_at"),
-        "total": await items.count(),
-    }
+
+    fetched_items = await items.limit(limit).offset(offset).order_by("-created_at")
+    model_instances = [pydantic_model(**dict(item)) for item in fetched_items]
+
+    return Page(items=model_instances, total=await items.count())

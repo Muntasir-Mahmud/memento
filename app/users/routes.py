@@ -14,7 +14,7 @@ router = APIRouter(prefix="/users", tags=["users"])
             response_model=Page[UserRead],
             dependencies=[Depends(current_user)])
 async def user_list(params: Params = Depends()):
-    return await paginate(User.all(), params)
+    return await paginate(User.all(), params, UserRead)
 
 
 router.include_router(fastapi_users.get_users_router(UserRead, UserUpdate))

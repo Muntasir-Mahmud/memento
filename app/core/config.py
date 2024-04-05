@@ -16,6 +16,7 @@ try:
 except ImportError:
     from enum import Enum
 
+
     class StrEnum(str, Enum):
         pass
 
@@ -25,7 +26,19 @@ class Environment(StrEnum):
     prod = "prod"
 
 
+# TODO: resolve the path problem
+class Paths:
+    # memento
+    ROOT_DIR: Path = Path(__file__).parent.parent.parent
+    BASE_DIR: Path = ROOT_DIR / "app"
+    LOGIN_PATH: str = "/auth/login"
+
+
 class Settings(BaseSettings):
+    @property
+    def PATHS(self) -> Paths:
+        return Paths()
+
     ROOT_DIR: Path = Path(__file__).parent.parent.parent
     BASE_DIR: Path = ROOT_DIR / "app"
     EMAIL_TEMPLATES_DIR: Path = BASE_DIR / "emails"
