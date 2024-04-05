@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, status
 from app.core.auth import current_user, superuser
 from app.core.pagination import Page, Params, paginate
 
+from .models import Topic
 from .schemas import TopicRead, TopicCreate, TopicUpdate
 from .crud import get_multi, create
 
@@ -17,6 +18,9 @@ router = APIRouter(tags=['Topics'], prefix='/topics')
 async def read_topics(
         params: Params = Depends()
 ) -> Page[TopicRead]:
+    """
+    Get list of topics.
+    """
     return await get_multi(params)
 
 
@@ -25,7 +29,7 @@ async def read_topics(
              dependencies=[Depends(superuser)])
 async def create_topic(
         topic_in: TopicCreate
-) -> Any:
+) -> Topic:
     """
     Create new topic.
     """
