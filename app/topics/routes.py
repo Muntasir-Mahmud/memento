@@ -21,7 +21,7 @@ async def read_topics(
     """
     Get list of topics.
     """
-    return await get_multi(params)
+    return await get_multi(params=params)
 
 
 @router.post("/create", status_code=status.HTTP_201_CREATED,
