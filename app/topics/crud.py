@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from fastapi.encoders import jsonable_encoder
 from pydantic import UUID4
 
-from app.core.pagination import Page, Params, paginate
+from app.core.pagination import Page, Params
 
 from .models import Topic
 from .schemas import TopicCreate, TopicRead, TopicUpdate
@@ -12,14 +12,14 @@ from .schemas import TopicCreate, TopicRead, TopicUpdate
 
 async def get_multi(
          params: Params
-) -> Page[TopicRead]:
-    return await paginate(Topic.all(), params, TopicRead)
+) -> dict:
+    return await TopicRead.from_queryset(Topic.all().limit(params.limit).offset(params.offset))
 
 
 async def get(
         topic_id: UUID4
 ) -> Topic:
-    return await Topic.get(id=topic_id)
+    return await Topic.filter(id=topic_id).first()
 
 
 async def create(
@@ -43,11 +43,10 @@ async def update(
 
 async def delete(
         topic_id: UUID4
-) -> bool:
+) -> None:
     deleted_obj = await Topic.filter(id=topic_id).delete()
     if not deleted_obj:
         raise HTTPException(
             status_code=404,
             detail=f"User {topic_id} not found"
         )
-    return True

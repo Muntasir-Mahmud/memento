@@ -20,6 +20,7 @@ class Page(BaseModel, Generic[T]):
     total: int
 
 
+# TODO: rewrite the pagination
 async def paginate(items: QuerySet, params: Params, pydantic_model: Type[BaseModel]) -> Page:
     offset = params.offset
     limit = params.limit
