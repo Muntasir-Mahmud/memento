@@ -1,10 +1,9 @@
 from typing import Union, Dict, Any
 
 from fastapi import HTTPException
-from fastapi.encoders import jsonable_encoder
 from pydantic import UUID4
 
-from app.core.pagination import Page, Params
+from app.core.pagination import Params
 
 from .models import Topic
 from .schemas import TopicCreate, TopicRead, TopicUpdate, TopicCreateIn, TopicUpdateIn
