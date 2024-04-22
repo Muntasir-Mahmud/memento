@@ -7,7 +7,7 @@ from pydantic import UUID4
 from app.core.pagination import Page, Params
 
 from .models import Topic
-from .schemas import TopicCreate, TopicRead, TopicUpdate
+from .schemas import TopicCreate, TopicRead, TopicUpdate, TopicCreateIn, TopicUpdateIn
 
 
 async def get_multi(
@@ -18,27 +18,27 @@ async def get_multi(
 
 async def get(
         topic_id: UUID4
-) -> Topic:
-    return await Topic.filter(id=topic_id).first()
+) -> TopicRead:
+    return await TopicRead.from_queryset_single(Topic.filter(id=topic_id).first())
 
 
 async def create(
-        obj_in: TopicCreate
-) -> Topic:
-    obj_in_data = jsonable_encoder(obj_in)
-    return await Topic.create(**obj_in_data)
+        obj_in: TopicCreateIn
+) -> TopicCreate:
+    topic_obj = await Topic.create(**obj_in.model_dump(exclude_unset=True))
+    return await TopicCreate.from_tortoise_orm(topic_obj)
 
 
 async def update(
         topic_id: UUID4,
-        obj_in: Union[TopicUpdate, Dict[str, Any]]
-) -> Topic:
+        obj_in: Union[TopicUpdateIn, Dict[str, Any]]
+) -> TopicUpdate:
     if isinstance(obj_in, dict):
         update_data = obj_in
     else:
         update_data = obj_in.dict(exclude_unset=True)
-    await Topic.filter(id=topic_id).update(**update_data)
-    return await Topic.get(id=topic_id)
+    topic_obj = await Topic.filter(id=topic_id).update(**update_data)
+    return await TopicUpdate.from_queryset_single(topic_obj)
 
 
 async def delete(

@@ -7,7 +7,7 @@ from app.core.auth import current_user, superuser
 from app.core.pagination import Params
 
 from .models import Topic
-from .schemas import TopicRead, TopicCreate, TopicUpdate
+from .schemas import TopicRead, TopicCreateIn, TopicUpdateIn, TopicCreate, TopicUpdate
 from .crud import get_multi, create, update, get, delete
 
 router = APIRouter(tags=['Topics'], prefix='/topics')
@@ -30,7 +30,7 @@ async def read_topics(
             dependencies=[Depends(current_user)])
 async def read_topic(
         topic_id: UUID4,
-) -> Topic:
+) -> TopicRead:
     """
     Retrieve a topic.
     """
@@ -41,8 +41,8 @@ async def read_topic(
              response_model=TopicCreate,
              dependencies=[Depends(superuser)])
 async def create_topic(
-        topic_in: TopicCreate
-) -> Topic:
+        topic_in: TopicCreateIn
+) -> TopicCreate:
     """
     Create new topic.
     """
@@ -54,7 +54,7 @@ async def create_topic(
             dependencies=[Depends(superuser)])
 async def update_topic(
         topic_id: UUID4,
-        topic_in: TopicUpdate
+        topic_in: TopicUpdateIn
 ) -> Topic:
     """
     Update a topic.
@@ -64,10 +64,10 @@ async def update_topic(
 
 @router.delete("/{topic_id}", status_code=status.HTTP_204_NO_CONTENT,
                dependencies=[Depends(superuser)])
-async def update_topic(
+async def delete_topic(
         topic_id: UUID4,
 ) -> None:
     """
-    Update a topic.
+    Delete a topic.
     """
     return await delete(topic_id=topic_id)
